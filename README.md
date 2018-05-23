@@ -1,5 +1,25 @@
 # Cyber Security Timer
 
+### Component List
+* Begin.js - Start screen, linked to Initial State in Sketch
+  * State: 
+  * Actions: 
+
+* Active.js - Appears after 'Start' is clicked from Begin.js, contains the timer and the password fields
+  * State: 
+  * Actions: 
+
+* Timer.js - Contains the hours, minutes, and seconds of the timer
+  * State: 
+  * Actions: 
+
+* Passwords.js - Contains all the password inputs and their associated submit buttons
+  * State: 
+  * Actions: 
+
+
+## Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
