@@ -5,6 +5,8 @@ class Passwords extends Component {
     return (
       <div className="passwords">
         <p className="text-center">To save your data, enter the six passwords</p>
+    
+    {/* Adding additional components here */}
     <form action="">
       <div className="form-group text-center">
         <div className="form-group">
@@ -53,6 +55,8 @@ class Passwords extends Component {
         </div>
       </div>
     </form>
+    
+    
     <p className="text-center">
       <small className="text-muted text-center">If you submit an incorrect password, you lose 15 minutes.</small>
    </p>

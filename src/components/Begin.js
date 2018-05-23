@@ -4,7 +4,9 @@ class Begin extends Component {
   render() {
     return (
       <div className="begin">
+       <div className="box p-5">
         Begin.js
+        </div>
       </div>
     );
   }
