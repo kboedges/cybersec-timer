@@ -6,9 +6,11 @@ class Active extends Component {
   render() {
     return (
       <div className="active">
-        Active.js
+        <div className="box p-5">
+        <p className="text-center">Your data will be deleted in:</p>
         < Timer />
         < Passwords />
+        </div>
       </div>
     );
   }

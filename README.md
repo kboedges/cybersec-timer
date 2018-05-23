@@ -17,6 +17,12 @@
   * State: 
   * Actions: 
 
+### Packages Installed 
+* popper (npm) (dependency)
+* jquery (npm) (dependency)
+* ajv (npm)
+* bootstrap (css)
+* create-react-app (react)
 
 ## Create React App
 
