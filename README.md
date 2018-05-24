@@ -2,28 +2,31 @@
 
 ### Component List
 * App.js - Allows the switch between Begin and Active
-  * State (Data): **timerStarted** (bool) - This will tell us if the user has clicked on 'Start' from the Begin page already. If not, that will tell App.js to display Begin.js. If so, that will tell App.js to display Active.js.
-  * Active: 
+  * State (Data): `timerStarted` (bool) - This will tell us if the user has clicked on 'Start' from the Begin page already. If not, that will tell App.js to display Begin.js. If so, that will tell App.js to display Active.js. 
+  * Action: n/a (this page doesn't perform any action, just displays a component based on `timerStarted`)
 
 * Begin.js - Start screen, linked to Initial State in Sketch
-  * State: 
-  * Actions: 
+  * State: `teamName` (string) - The input field will want this pre-populated if the team's name exists already (in case the user goes back to the Begin page)
+  * State: `timerStarted` (bool) - If true, the 'Start' button will display 'Continue' instead.
+  * Action: `START_TIMER` - Starts the timer counting down from 5 hours, changes `timerStarted` to true.
 
 * Active.js - Appears after 'Start' is clicked from Begin.js, contains the timer and the password fields
-  * State: 
-  * Actions: 
+  * State: n/a
+  * Action: n/a
 
 * Timer.js - Contains the hours, minutes, and seconds of the timer
-  * State: 
+  * State: `timeLeft` (object) - This is the time displayed on the clock, contains total, hours, mins, and secs...so `timeLeft.hours` as an example. 
   * Actions: 
 
 * Passwords.js - Contains all the password inputs and their associated submit buttons
-  * State: 
-  * Actions: 
+  * State: `passwords` (array with objects) - Array of passwords fields with *disabled*, *success*, (and possibly something else?)
+  * Action: n/a
+  
 
 * InputGroup.js - Generates a password input field and associated button
-  * State:
-  * Actions: 
+  * State: `passwords`
+  * State: `timeLeft`
+  * Action: `VALIDATE_PASS` - Subtracts 15 mins from `timeLeft.total` if the total exceeds 15 mins when the wrong password is inputted. If there is less than 15 mins left, the clock goes to 0 and changes to red, the fields all disable. If the password is correct, the next password in the list is enabled. If all the passwords are correct, the clock stops and turns green.
 
 ### Packages/Libraries Installed 
 * popper (npm) (dependency)

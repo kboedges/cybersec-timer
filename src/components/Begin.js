@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types'
 
 class Begin extends Component {
 
-  // static propTypes = {
-  //   started: PropTypes.bool.isRequired,
-  //   onClickStart: PropTypes.func.isRequired
-  // }
-
   render() {
-    // const {started, onClickStart} = this.props;
 
     return (
       <div className="begin">
