@@ -17,7 +17,7 @@
   * State: 
   * Actions: 
 
-### Packages Installed 
+### Packages/Libraries Installed 
 * popper (npm) (dependency)
 * jquery (npm) (dependency)
 * ajv (npm)

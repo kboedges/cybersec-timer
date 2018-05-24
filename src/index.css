@@ -17,9 +17,34 @@ body {
 
 .box {
   width: 620px;
-  min-height: 560px;
+  min-height: 500px;
   background: #fff;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
   border-radius: 4px;
 }
 
+.btn-cornflower {
+  background-color: #4B85C9;
+  border-color: #4B85C9;
+  color: #fff;
+}
+
+.btn {
+  border-radius: 2px !important;
+}
+
+.time-char {
+  color: #fff;
+  font-family: 'Righteous', sans-serif;
+  background: rgb(101,101,101);
+  background: linear-gradient(180deg, rgba(101,101,101,1) 0%, rgba(53,53,53,1) 100%);
+  border-radius: 2px;
+}
+
+.time-char:nth-child(3), .time-char:nth-child(6) {
+  background-color: transparent;
+  background: transparent;
+  color: #000;
+  margin: 0 !important;
+  padding: 0 !important;
+}

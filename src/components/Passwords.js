@@ -7,28 +7,27 @@ class Passwords extends Component {
     return (
       <div className="passwords">
         <p className="text-center">To save your data, enter the six passwords</p>
-    
-    <form action="">
-      <div className="form-group text-center">
-        <div className="form-group">
-          <div className="row mb-3">
-            <InputGroup fieldDisabled={false}/>
-            <InputGroup fieldDisabled={true}/> 
+        <form action="">
+          <div className="form-group text-center">
+            <div className="form-group">
+              <div className="row mb-3">
+                <InputGroup fieldDisabled={false}/>
+                <InputGroup fieldDisabled={true}/> 
+              </div>
+              <div className="row mb-3">
+                <InputGroup fieldDisabled={true}/>
+                <InputGroup fieldDisabled={true}/>
+              </div>
+              <div className="row mb-3">
+                <InputGroup fieldDisabled={true}/>
+                <InputGroup fieldDisabled={true}/>
+              </div>
+            </div>
           </div>
-          <div className="row mb-3">
-            <InputGroup fieldDisabled={true}/>
-            <InputGroup fieldDisabled={true}/>
-          </div>
-          <div className="row mb-3">
-            <InputGroup fieldDisabled={true}/>
-            <InputGroup fieldDisabled={true}/>
-          </div>
-        </div>
-      </div>
-    </form>   
-    <p className="text-center">
-      <small className="text-muted text-center">If you submit an incorrect password, you lose 15 minutes.</small>
-   </p>
+        </form>   
+        <p className="text-center">
+          <small className="text-muted text-center">If you submit an incorrect password, you lose 15 minutes.</small>
+        </p>
       </div>
     );
   }

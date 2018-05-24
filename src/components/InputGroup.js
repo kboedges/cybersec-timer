@@ -17,7 +17,7 @@ class InputGroup extends Component {
         <div className="input-group col">
                 <input type="password" className="form-control" placeholder="Password 1" disabled={fieldDisabled}/>
                 <div className="input-group-append">
-                    <button className={`btn ${fieldDisabled ? 'btn-secondary' : 'btn-primary'}`} type="button" disabled={fieldDisabled}>Go</button>
+                    <button className={`btn ${fieldDisabled ? 'btn-secondary' : 'btn-cornflower'}`} type="button" disabled={fieldDisabled}>Go</button>
                 </div>
             </div>
         );
