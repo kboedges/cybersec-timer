@@ -6,8 +6,8 @@ class App extends Component {
   render() {
     return (
       <div className="app d-flex flex-column justify-content-center align-items-center">
-        {/* < Begin /> */}
-        < Active />
+        < Begin />
+        {/* < Active /> */}
       </div>
     );
   }
