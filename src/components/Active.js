@@ -7,7 +7,6 @@ class Active extends Component {
     return (
       <div className="active">
         <div className="box p-5">
-        <p className="text-center">Your data will be deleted in:</p>
         < Timer />
         < Passwords />
         </div>

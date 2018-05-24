@@ -26,7 +26,7 @@ class Passwords extends Component {
           </div>
         </form>   
         <p className="text-center">
-          <small className="text-muted text-center">If you submit an incorrect password, you lose 15 minutes.</small>
+          <small className="text-muted text-center">If you submit an incorrect password, you lose 15 minutes</small>
         </p>
       </div>
     );

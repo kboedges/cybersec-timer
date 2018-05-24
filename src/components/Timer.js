@@ -8,8 +8,9 @@ let timeLeftArray = timeLeft.split("");
 class Timer extends Component {
   render() {
     return (
-      <div className="timer">
-      <h1 className="timer-head text-center mt-4 mb-5">
+      <div className="timer pb-3">
+      <p className="text-center pb-3">Your data will be deleted in:</p>
+      <h1 className="timer-head text-center mb-5">
 
         
         
