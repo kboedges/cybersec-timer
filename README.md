@@ -1,6 +1,10 @@
 # Cyber Security Timer
 
 ### Component List
+* App.js - Allows the switch between Begin and Active
+  * State (Data): **timerStarted** (bool) - This will tell us if the user has clicked on 'Start' from the Begin page already. If not, that will tell App.js to display Begin.js. If so, that will tell App.js to display Active.js.
+  * Active: 
+
 * Begin.js - Start screen, linked to Initial State in Sketch
   * State: 
   * Actions: 
@@ -15,6 +19,10 @@
 
 * Passwords.js - Contains all the password inputs and their associated submit buttons
   * State: 
+  * Actions: 
+
+* InputGroup.js - Generates a password input field and associated button
+  * State:
   * Actions: 
 
 ### Packages/Libraries Installed 
