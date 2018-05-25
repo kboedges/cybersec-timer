@@ -33,6 +33,8 @@
 * ajv (npm)
 * bootstrap (css)
 * create-react-app (react)
+* redux
+* react-redux
 
 ## Create React App
 

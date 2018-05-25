@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { VALIDATE_PASS } from '../actions'
 import PropTypes from 'prop-types';
 
 class InputGroup extends Component {

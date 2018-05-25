@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { START_TIMER } from '../actions';
 
 class Begin extends Component {
 

@@ -1,6 +1,7 @@
 // Turn timeLeft into an object and then have an if statement for each one and use the comment below to generate a div for hours, mins, secs.
 
 import React, { Component } from 'react';
+import { STOP_TIMER, UPDATE_TIME} from '../actions';
 
 let timeLeft = "04:59:59";
 let timeLeftArray = timeLeft.split("");
