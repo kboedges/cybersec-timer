@@ -16,12 +16,11 @@
 
 * Timer.js - Contains the hours, minutes, and seconds of the timer
   * State: `timeLeft` (object) - This is the time displayed on the clock, contains total, hours, mins, and secs...so `timeLeft.hours` as an example. 
-  * Actions: 
+  * Actions: `STOP_TIMER` - The timer will stop once it reaches 0.
 
 * Passwords.js - Contains all the password inputs and their associated submit buttons
   * State: `passwords` (array with objects) - Array of passwords fields with *disabled*, *success*, (and possibly something else?)
   * Action: n/a
-  
 
 * InputGroup.js - Generates a password input field and associated button
   * State: `passwords`
