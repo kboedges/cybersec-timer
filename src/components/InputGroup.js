@@ -1,3 +1,6 @@
+// On click of button, send that input's input through to validatePass, 
+// this will compare to the passwordSolutions array. If the password matches, 
+
 import React, { Component } from 'react';
 import { VALIDATE_PASS } from '../actions'
 import PropTypes from 'prop-types';
