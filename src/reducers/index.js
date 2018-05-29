@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux'
 import timeReducer from './timeReducer'
 import passReducer from './passReducer'
+import timerStartedReducer from './timerStartedReducer'
 
 export default combineReducers({
   timeReducer,
-  passReducer
+  passReducer,
+  timerStartedReducer
 })
 
 

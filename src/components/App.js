@@ -6,20 +6,18 @@ import Active from './Active'
 class App extends Component {
 
   render() {
-    const { state } = this.props;
+    const { timerStarted } = this.props;
 
     return (
       <div className="app d-flex flex-column justify-content-center align-items-center">
-         { state.timeReducer.timerStarted ? <Active/> : <Begin/>}
+         { timerStarted ? <Active/> : <Begin/>}
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    state
-  }
-}
+const mapStateToProps = state => ({
+  timerStarted: state.timerStartedReducer
+});
 
 export default connect(mapStateToProps)(App);

@@ -3,13 +3,10 @@ export const UPDATE_TIME = 'UPDATE_TIME';
 export const STOP_TIMER = 'STOP_TIMER';
 export const VALIDATE_PASS = 'VALIDATE_PASS';
 
-export function startTimer({teamName, timerStarted}){
-    return {
-        type: START_TIMER,
-        teamName,
-        timerStarted
-    }
-}
+export const startTimer = () => ({
+        type: START_TIMER
+        // teamName...add this later
+    })
 
 export function updateTime({timeLeft}){
     return {
