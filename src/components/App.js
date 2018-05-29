@@ -17,7 +17,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  timerStarted: state.timerStartedReducer
+  timerStarted: state.timerStartedReducer.timerStarted
 });
 
 export default connect(mapStateToProps)(App);
