@@ -7,7 +7,6 @@ class App extends Component {
 
   render() {
     const { state } = this.props;
-    console.log(state);
 
     return (
       <div className="app d-flex flex-column justify-content-center align-items-center">

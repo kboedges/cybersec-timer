@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux'
 import { START_TIMER } from '../actions';
 
 class Begin extends Component {
 
   render() {
+    const { state } = this.props;
 
     return (
       <div className="begin">
@@ -17,4 +19,10 @@ class Begin extends Component {
   }
 }
 
-export default Begin;
+const mapStateToProps = state => {
+  return {
+    state
+  }
+}
+
+export default connect(mapStateToProps)(Begin);
