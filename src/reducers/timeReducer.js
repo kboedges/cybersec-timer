@@ -13,10 +13,12 @@ initialTimer.timeLeft.hours = Math.floor((initialTimer.timeLeft.total/(1000*60*6
 
 function timeReducer(state = initialTimer, action) {
     switch(action.type) {
-        case 'START_TIMER':
+        case START_TIMER:
             return action.timerStarted
-        case 'UPDATE_TIME':
+        case UPDATE_TIME:
             return 
+        case STOP_TIME:
+            return
         default:
             return state;
     }
