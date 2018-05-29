@@ -7,6 +7,9 @@ class Active extends Component {
     return (
       <div className="active">
         <div className="box p-5">
+        
+       
+        
         <Timer/>
         <Passwords/>
         </div>

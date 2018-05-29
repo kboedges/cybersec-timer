@@ -17,7 +17,7 @@ function timeReducer(state = initialTimer, action) {
             return action.timerStarted
         case UPDATE_TIME:
             return 
-        case STOP_TIME:
+        case STOP_TIMER:
             return
         default:
             return state;
