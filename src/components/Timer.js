@@ -9,10 +9,10 @@ class Timer extends Component {
         <h1 className="timer-head text-center mb-5">
       
           <Countdown 
-            date={Date.now() + 5*60*60*1000} 
+            date={Date.now() + 1000} 
             renderer={props => (
             <div>{`${props.hours}:${props.minutes}:${props.seconds}`.split("").map((char, index) => (
-              <span key={index} className="time-char px-3 py-3 mx-2">{char}</span>
+              <span key={index} className={`time-char ${props.total === 0 ? "time-red" : "time-normal"} px-3 py-3 mx-2`}>{char}</span>
             ))}</div>
             )}
           />

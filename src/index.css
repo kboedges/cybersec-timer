@@ -36,8 +36,6 @@ body {
 .time-char {
   color: #fff;
   font-family: 'Righteous', sans-serif;
-  background: rgb(101,101,101);
-  background: linear-gradient(180deg, rgba(101,101,101,1) 0%, rgba(53,53,53,1) 100%);
   border-radius: 2px;
   width: 60px;
   display: inline-block;
@@ -50,6 +48,16 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   display: inline !important;
+}
+
+.time-normal {
+  background: rgb(101,101,101);
+  background: linear-gradient(180deg, rgba(101,101,101,1) 0%, rgba(53,53,53,1) 100%);
+}
+
+.time-red {
+  background: rgb(196, 15, 15);
+  background: linear-gradient(180deg, rgb(196, 15, 15) 0%, rgb(105, 10, 10) 100%);
 }
 
 .timer-head {
