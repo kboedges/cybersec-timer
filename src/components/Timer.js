@@ -7,7 +7,6 @@ class Timer extends Component {
       <div className="timer pb-3">
         <p className="text-center pb-3">Your data will be deleted in:</p>
         <h1 className="timer-head text-center mb-5">
-      
           <Countdown 
             date={Date.now() + 5*60*60*1000} 
             renderer={props => (
