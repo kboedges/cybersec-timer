@@ -39,6 +39,8 @@ body {
   background: rgb(101,101,101);
   background: linear-gradient(180deg, rgba(101,101,101,1) 0%, rgba(53,53,53,1) 100%);
   border-radius: 2px;
+  width: 60px;
+  display: inline-block;
 }
 
 .time-char:nth-child(3), .time-char:nth-child(6) {
@@ -47,10 +49,11 @@ body {
   color: #000;
   margin: 0 !important;
   padding: 0 !important;
+  display: inline !important;
 }
 
 .timer-head {
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 
 .text-muted {
