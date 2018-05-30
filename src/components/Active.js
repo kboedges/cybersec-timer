@@ -9,7 +9,7 @@ class Active extends Component {
 
     return (
       <div className="active">
-        <div className="box p-5">
+        <div className="box py-4 px-5">
         <h3 className="text-center team-name">Team: {teamName}</h3>
         <Timer/>
         <Passwords/>

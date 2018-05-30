@@ -18,7 +18,7 @@ class Begin extends Component {
     
     return (
       <div className="begin">
-       <form className="box p-5 d-flex d-flex flex-column justify-content-center align-items-center">
+       <form className="box py-4 px-5 d-flex d-flex flex-column justify-content-center align-items-center">
         <h1 className="text-center m-3">Begin your challenge.</h1>
         <input className="form-control w-50 m-3" value={this.state.value} onChange={this.handleChange} type="text" placeholder="Team Name"/>
         <button className="m-3 btn btn-lg btn-cornflower px-5" onClick={() => startTimer(this.state.value)}>{timerStarted ? "Continue" : "Start"}</button>
