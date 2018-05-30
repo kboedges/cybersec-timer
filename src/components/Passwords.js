@@ -6,7 +6,7 @@ class Passwords extends Component {
   render() {
     return (
       <div className="passwords">
-        <p className="text-center">To save your data, enter the six passwords</p>
+        <p className="text-center pb-3">To save your data, enter the six passwords</p>
         <form action="">
           <div className="form-group text-center">
             <div className="form-group">

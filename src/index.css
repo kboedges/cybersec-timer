@@ -37,17 +37,19 @@ body {
   color: #fff;
   font-family: 'Righteous', sans-serif;
   border-radius: 2px;
-  width: 60px;
+  width: 66px;
   display: inline-block;
 }
 
 .time-char:nth-child(3), .time-char:nth-child(6) {
   background-color: transparent;
   background: transparent;
-  color: #000;
+  color: rgba(53,53,53,1);
   margin: 0 !important;
-  padding: 0 !important;
+  padding: 0 0.2rem !important;
   display: inline !important;
+  line-height: 1 !important;
+  vertical-align: text-top;
 }
 
 .time-normal {
@@ -60,8 +62,16 @@ body {
   background: linear-gradient(180deg, rgb(196, 15, 15) 0%, rgb(105, 10, 10) 100%);
 }
 
+.time-stamps span {
+  width: 100px;
+  display: inline-block;
+  text-align: center;
+  font-size: .7rem;
+  letter-spacing: 3px;
+}
+
 .timer-head {
-  font-size: 3rem;
+  font-size: 3.3rem;
 }
 
 .text-muted {
