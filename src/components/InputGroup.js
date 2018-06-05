@@ -3,18 +3,21 @@
 
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {validatePass} from '../actions'
+import {validatePass, fetchPasses} from '../actions'
 import PropTypes from 'prop-types';
 
 class InputGroup extends Component {
+    // componentDidMount() {
+    //     this.props.dispatch(fetchPasses());
+    // }
 
     static propTypes = {
         fieldDisabled: PropTypes.bool.isRequired
     } 
 
     render() {
-        const {fieldDisabled} = this.props;
-        console.log("STATE:", this.props.state);
+        const {fieldDisabled, passwords} = this.props;
+        console.log("passwords:", passwords);
         
         return (
         <div className="input-group col">
@@ -28,14 +31,14 @@ class InputGroup extends Component {
 }
 
 const mapStateToProps = state => ({
-    state
-    // timerStarted: state.timerStartedReducer.timerStarted,
-    // teamName: state.timerStartedReducer.teamName
+    passwords: state.passReducer.passwordSolutions
   });
   
-  const mapDispatchToProps = dispatch => ({
-    validatePass: (enteredPass) => dispatch(validatePass(enteredPass))
-  });
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(InputGroup);
+const mapDispatchToProps = dispatch => ({
+    validatePass: (passArray, passId, enteredPass) => dispatch(validatePass(passArray, passId, enteredPass)),
+    fetchPasses: () => dispatch(fetchPasses()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(InputGroup);
+// export default connect(mapStateToProps)(InputGroup);
   
