@@ -1,3 +1,5 @@
+import * as PassAPI from '../utils/PassAPI'
+
 export const START_TIMER = 'START_TIMER';
 export const VALIDATE_PASS = 'VALIDATE_PASS';
 
@@ -12,4 +14,8 @@ export function validatePass({passID, passInput}){
         passID,
         passInput
     }
+}
+
+function fetchPasses = () => {
+    
 }
