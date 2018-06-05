@@ -8,14 +8,18 @@ export const startTimer = (teamName) => ({
         teamName
     })
 
-export function validatePass({passID, passInput}){
+export const validatePass = (passArray, passId, enteredPass) => {
     return {
         type: VALIDATE_PASS,
-        passID,
-        passInput
+        passArray,
+        passId,
+        enteredPass
     }
 }
 
-function fetchPasses = () => {
-    
+const fetchPasses = (passId, enteredPass) => {
+    return dispatch => {
+        PassAPI.getPasses()
+        .then(json => dispatch(validatePass(json, passId, enteredPass)))
+    }
 }

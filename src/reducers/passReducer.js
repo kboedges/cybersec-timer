@@ -1,7 +1,7 @@
 import { VALIDATE_PASS } from '../actions';
 
 const initialPass = {
-    passwordSolutions: ["dog", "cat", "mouse", "bird", "human", "lion"],
+    passwordSolutions: [],
     passwordInputs: [
         {
             id: 1,
@@ -46,7 +46,15 @@ const initialPass = {
 function passReducer(state = initialPass, action) {
     switch (action.type) {
         case VALIDATE_PASS:
-          return 
+            return {
+                passwordSolutions: [...state.passwordSolutions, action.passArray],
+                // passwordInputs: [
+                //     ...state.passwordInputs, 
+                //     [action.passId-1].inputCorrect: (
+                //         passwordSolutions.includes(action.enteredPass) ? true : false
+                //     )
+                // ]
+            }
         default:
           return state;
       }
