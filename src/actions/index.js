@@ -23,7 +23,7 @@ export const validatePass = (passArray, passId, enteredPass) => {
 // so that passID and enteredPass aren't needed here
 // fetchPasses will grab the stuff from the API
 
-export const fetchPasses = (passId, enteredPass) => {
+export const fetchPasses = () => {
     return dispatch => {
         PassAPI.getPasses()
         .then(json => dispatch(passesReceived(json.passwords)))

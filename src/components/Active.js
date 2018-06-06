@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
+import {fetchPasses} from '../actions'
 import Passwords from './Passwords'
 import Timer from './Timer'
 
 class Active extends Component {
+  
+  // Fetch all the secret passwords whenever the Active screen appears
+  componentDidMount() {
+    this.props.fetchPasses();
+  }
+
   render() {
     const {teamName} = this.props;
 
@@ -19,8 +26,14 @@ class Active extends Component {
   }
 }
 
+// Pull in the teamName from the store
 const mapStateToProps = state => ({
   teamName: state.timerStartedReducer.teamName
 });
 
-export default connect(mapStateToProps)(Active);
+// Pull in an action
+const mapDispatchToProps = dispatch => ({
+  fetchPasses: () => dispatch(fetchPasses())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Active);

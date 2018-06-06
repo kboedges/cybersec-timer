@@ -3,7 +3,7 @@
 
 import React, { Component } from 'react';
 import {connect} from 'react-redux'
-import {validatePass, fetchPasses} from '../actions'
+import {validatePass} from '../actions'
 import PropTypes from 'prop-types';
 
 class InputGroup extends Component {
@@ -28,7 +28,7 @@ class InputGroup extends Component {
 
     render() {
         const {fieldDisabled, passId, passwordSolutions} = this.props;
-        console.log(this.props.state);
+        console.log(this.props.passwordSolutions);
         
         return (
             <div className="input-group col">
@@ -55,13 +55,11 @@ class InputGroup extends Component {
 // () => validatePass(passwordSolutions, passId, this.state.value)
 const mapStateToProps = state => ({
     passwordSolutions: state.passReducer.passwordSolutions
-  });
+});
   
 const mapDispatchToProps = dispatch => ({
     validatePass: (passArray, passId, enteredPass) => dispatch(validatePass(passArray, passId, enteredPass)),
-    fetchPasses: () => dispatch(fetchPasses()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(InputGroup);
-// export default connect(mapStateToProps)(InputGroup);
   

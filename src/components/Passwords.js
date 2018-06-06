@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import InputGroup from './InputGroup'
 
 class Passwords extends Component {
+    
 
   render() {
     return (
