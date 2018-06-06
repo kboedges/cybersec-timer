@@ -11,16 +11,16 @@ class Passwords extends Component {
           <div className="form-group text-center">
             <div className="form-group">
               <div className="row mb-3">
-                <InputGroup fieldDisabled={false}/>
-                <InputGroup fieldDisabled={true}/> 
+                <InputGroup fieldDisabled={false} passId={1}/>
+                <InputGroup fieldDisabled={true} passId={2}/> 
               </div>
               <div className="row mb-3">
-                <InputGroup fieldDisabled={true}/>
-                <InputGroup fieldDisabled={true}/>
+                <InputGroup fieldDisabled={true} passId={3}/>
+                <InputGroup fieldDisabled={true} passId={4}/>
               </div>
               <div className="row mb-3">
-                <InputGroup fieldDisabled={true}/>
-                <InputGroup fieldDisabled={true}/>
+                <InputGroup fieldDisabled={true} passId={5}/>
+                <InputGroup fieldDisabled={true} passId={6}/>
               </div>
             </div>
           </div>
