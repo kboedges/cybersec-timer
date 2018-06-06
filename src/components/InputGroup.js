@@ -17,10 +17,12 @@ class InputGroup extends Component {
         passId: PropTypes.number.isRequired
     } 
 
+    // Handle a change to the input field, put the new value in state
     handleChange = (event) => {
         this.setState({value: event.target.value});
     }
     
+    // Do a thing with the value from state when submitting button
     handleSubmit = (event) => {
         alert('A name was submitted: ' + this.state.value);
         event.preventDefault();
@@ -52,11 +54,15 @@ class InputGroup extends Component {
         );
     }
 }
+
 // () => validatePass(passwordSolutions, passId, this.state.value)
+
+// Grabbing passwordSolutions from the store (which got them from the server)
 const mapStateToProps = state => ({
     passwordSolutions: state.passReducer.passwordSolutions
 });
-  
+
+// Pulling in an action to validate the password
 const mapDispatchToProps = dispatch => ({
     validatePass: (passArray, passId, enteredPass) => dispatch(validatePass(passArray, passId, enteredPass)),
 });
