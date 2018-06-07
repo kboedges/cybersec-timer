@@ -1,7 +1,14 @@
 import { VALIDATE_PASS } from '../actions';
 
 const initialPass = {
-    passwordSolutions: [],
+    passwordSolutions: [
+        "password1",
+        "password2",
+        "password3",
+        "password4",
+        "password5",
+        "password6"
+    ],
     passwordInputs: [
         {
             id: 1,

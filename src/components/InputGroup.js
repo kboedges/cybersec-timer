@@ -30,7 +30,7 @@ class InputGroup extends Component {
 
     render() {
         const {fieldDisabled, passId, passwordSolutions} = this.props;
-        console.log(this.props.passwordSolutions);
+        console.log(this.props.state);
         
         return (
             <div className="input-group col">
@@ -58,8 +58,9 @@ class InputGroup extends Component {
 // () => validatePass(passwordSolutions, passId, this.state.value)
 
 // Grabbing passwordSolutions from the store (which got them from the server)
-const mapStateToProps = state => ({
-    passwordSolutions: state.passReducer.passwordSolutions
+const mapStateToProps = (state) => ({
+    passwordSolutions: state.passReducer.passwordSolutions,
+    state
 });
 
 // Pulling in an action to validate the password
