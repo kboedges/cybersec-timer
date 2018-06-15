@@ -1,11 +1,10 @@
 import { combineReducers } from "redux";
 
 // States
-import passReducer from "./passReducer";
 import timerStarted from "./timer";
+import teamName from "./team-name";
 
 export default combineReducers({
-  passReducer,
-  timerStartedReducer,
-  timerStarted
+  timerStarted,
+  teamName
 });
