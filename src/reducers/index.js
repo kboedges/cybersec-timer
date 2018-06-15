@@ -1,8 +1,11 @@
-import { combineReducers } from 'redux'
-import passReducer from './passReducer'
-import timerStartedReducer from './timerStartedReducer'
+import { combineReducers } from "redux";
+
+// States
+import passReducer from "./passReducer";
+import timerStarted from "./timer";
 
 export default combineReducers({
   passReducer,
-  timerStartedReducer
-})
+  timerStartedReducer,
+  timerStarted
+});

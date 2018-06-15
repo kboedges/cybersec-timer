@@ -55,12 +55,12 @@ function passReducer(state = initialPass, action) {
         case VALIDATE_PASS:
             return {
                 passwordSolutions: [...state.passwordSolutions, action.passArray],
-                // passwordInputs: [
-                //     ...state.passwordInputs, 
-                //     [action.passId-1].inputCorrect: (
-                //         passwordSolutions.includes(action.enteredPass) ? true : false
-                //     )
-                // ]
+                passwordInputs: [
+                    ...state.passwordInputs, 
+                    [action.passId-1].inputCorrect: (
+                        passwordSolutions.includes(action.enteredPass) ? true : false
+                    )
+                ]
             }
         default:
           return state;
