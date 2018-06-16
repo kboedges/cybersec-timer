@@ -51,7 +51,6 @@ class InputGroup extends Component {
 
   render() {
     const { fieldDisabled } = this.props;
-    console.log(this.state.passCorrect);
 
     return (
       <div className="input-group col">
