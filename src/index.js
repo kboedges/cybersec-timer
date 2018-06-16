@@ -10,6 +10,7 @@ import App from "./components/App";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 
+// Actions
 import { getPasswords } from "./reducers/passwords/actions";
 
 const loggerMiddleware = createLogger();
@@ -20,7 +21,7 @@ const store = createStore(
   composeEnhancers(applyMiddleware(thunkMiddleware, loggerMiddleware))
 );
 
-// Fetching everything on load
+// Fetching Passwords
 store.dispatch(getPasswords());
 
 ReactDOM.render(
