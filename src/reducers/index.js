@@ -4,9 +4,11 @@ import { combineReducers } from "redux";
 import timerStarted from "./timer";
 import teamName from "./team-name";
 import passwords from "./passwords";
+import storedPasses from "./store-pass";
 
 export default combineReducers({
   timerStarted,
   teamName,
-  passwords
+  passwords,
+  storedPasses
 });

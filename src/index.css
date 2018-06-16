@@ -1,8 +1,11 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
-@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url("https://fonts.googleapis.com/css?family=Lato:300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Righteous");
 
-html, body, #root, .app {
-    height: 100vh;
+html,
+body,
+#root,
+.app {
+  height: 100vh;
 }
 
 body {
@@ -12,21 +15,37 @@ body {
 
 .app {
   background-color: #eee;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .box {
   width: 620px;
   min-height: 500px;
   background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   border-radius: 4px;
 }
 
 .btn-cornflower {
-  background-color: #4B85C9;
-  border-color: #4B85C9;
+  background-color: #4b85c9;
+  border-color: #4b85c9;
   color: #fff;
+}
+
+.btn-correct {
+  background-color: rgb(75, 201, 75);
+  border-color: rgb(75, 201, 75);
+  color: #fff;
+}
+
+.btn-wrong {
+  background-color: rgb(196, 15, 15);
+  border-color: rgb(196, 15, 15);
+  color: #fff;
+}
+
+.btn-input {
+  width: 47px;
 }
 
 .btn {
@@ -35,16 +54,17 @@ body {
 
 .time-char {
   color: #fff;
-  font-family: 'Righteous', sans-serif;
+  font-family: "Righteous", sans-serif;
   border-radius: 2px;
   width: 66px;
   display: inline-block;
 }
 
-.time-char:nth-child(3), .time-char:nth-child(6) {
+.time-char:nth-child(3),
+.time-char:nth-child(6) {
   background-color: transparent;
   background: transparent;
-  color: rgba(53,53,53,1);
+  color: rgba(53, 53, 53, 1);
   margin: 0 !important;
   padding: 0 0.2rem !important;
   display: inline !important;
@@ -53,20 +73,28 @@ body {
 }
 
 .time-normal {
-  background: rgb(101,101,101);
-  background: linear-gradient(180deg, rgba(101,101,101,1) 0%, rgba(53,53,53,1) 100%);
+  background: rgb(101, 101, 101);
+  background: linear-gradient(
+    180deg,
+    rgba(101, 101, 101, 1) 0%,
+    rgba(53, 53, 53, 1) 100%
+  );
 }
 
 .time-red {
   background: rgb(196, 15, 15);
-  background: linear-gradient(180deg, rgb(196, 15, 15) 0%, rgb(105, 10, 10) 100%);
+  background: linear-gradient(
+    180deg,
+    rgb(196, 15, 15) 0%,
+    rgb(105, 10, 10) 100%
+  );
 }
 
 .time-stamps span {
   width: 100px;
   display: inline-block;
   text-align: center;
-  font-size: .7rem;
+  font-size: 0.7rem;
   letter-spacing: 3px;
 }
 
@@ -75,5 +103,5 @@ body {
 }
 
 .text-muted {
-  opacity: .6;
+  opacity: 0.6;
 }
