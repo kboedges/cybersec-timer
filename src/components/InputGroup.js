@@ -36,13 +36,15 @@ class InputGroup extends Component {
       } else {
         console.log("Already been used, not valid");
         this.setState({
-          passCorrect: false
+          passCorrect: false,
+          value: ""
         });
       }
     } else {
       console.log("Not valid pass");
       this.setState({
-        passCorrect: false
+        passCorrect: false,
+        value: ""
       });
     }
   };
