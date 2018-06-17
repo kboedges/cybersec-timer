@@ -11,7 +11,3 @@ export default (state = initialState, action) => {
       return state;
   }
 };
-
-// pull array into store, check passId-2 to see if disabled or not
-// returns inputsArray
-// return state.map(order => (index == action.orderIndex ? { ...order, quantity: order.quantity + 1 } : order));
