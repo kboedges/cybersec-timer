@@ -26,7 +26,7 @@ class InputGroup extends Component {
   handleSubmit = event => {
     event.preventDefault();
     if (this.props.passwords.includes(this.state.value)) {
-      console.log("Valid pass");
+      // console.log("Valid pass");
       if (!this.props.storedPasses.includes(this.state.value)) {
         // console.log("Never been used");
         this.props.updateInputs(this.props.passId);
@@ -53,7 +53,7 @@ class InputGroup extends Component {
   render() {
     const { inputsArray, passId } = this.props;
     const prevInput = inputsArray[passId - 1];
-    console.log(passId, prevInput);
+    // console.log(passId, prevInput);
 
     return (
       <div className="input-group col">
