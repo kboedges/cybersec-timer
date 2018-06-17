@@ -26,6 +26,8 @@ body {
   border-radius: 4px;
 }
 
+/* Buttons */
+
 .btn-cornflower {
   background-color: #4b85c9;
   border-color: #4b85c9;
@@ -51,6 +53,8 @@ body {
 .btn {
   border-radius: 2px !important;
 }
+
+/* Time */
 
 .time-char {
   color: #fff;
@@ -99,6 +103,16 @@ body {
   font-size: 3.3rem;
 }
 
+/* Text */
+
 .text-muted {
   opacity: 0.6;
+}
+
+.saved-title {
+  color: rgb(44, 155, 44);
+}
+
+.deleted-title {
+  color: rgb(196, 15, 15);
 }

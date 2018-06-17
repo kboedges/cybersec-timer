@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import Passwords from "./Passwords";
 import Timer from "./Timer";
 
+// Actions
 class Active extends Component {
   render() {
     const { teamName } = this.props;

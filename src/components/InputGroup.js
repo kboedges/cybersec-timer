@@ -69,7 +69,7 @@ class InputGroup extends Component {
   };
 
   render() {
-    const { inputsArray, passId } = this.props;
+    const { inputsArray, passId, inputsDisabled } = this.props;
     const prevInput = inputsArray[passId - 1];
 
     return (
@@ -78,17 +78,17 @@ class InputGroup extends Component {
           type="password"
           className="form-control"
           placeholder={`Password ${passId}`}
-          disabled={this.state.passCorrect === true || prevInput === false}
+          disabled={this.state.passCorrect === true || prevInput === false || inputsDisabled === true}
           value={this.state.value}
           onChange={this.handleChange}
         />
         <div className="input-group-append">
           <button
-            className={`btn btn-input ${prevInput === false ? "btn-secondary" : "btn-cornflower"} ${
-              this.state.passCorrect === true ? "btn-correct" : this.state.passCorrect === false ? "btn-wrong" : ""
-            }`}
+            className={`btn btn-input 
+            ${prevInput === false || inputsDisabled === true ? "btn-secondary" : "btn-cornflower"} 
+            ${this.state.passCorrect === true ? "btn-correct" : this.state.passCorrect === false ? "btn-wrong" : ""}`}
             type="button"
-            disabled={this.state.passCorrect === true || prevInput === false}
+            disabled={this.state.passCorrect === true || prevInput === false || inputsDisabled === true}
             onClick={this.handleSubmit}
           >
             {this.state.passCorrect === true ? "✔" : "Go"}
@@ -99,10 +99,11 @@ class InputGroup extends Component {
   }
 }
 
-const mapStateToProps = ({ passwords, storedPasses, inputsArray }) => ({
+const mapStateToProps = ({ passwords, storedPasses, inputsArray, inputsDisabled }) => ({
   passwords,
   storedPasses,
-  inputsArray
+  inputsArray,
+  inputsDisabled
 });
 
 const mapDispatchToProps = dispatch => ({

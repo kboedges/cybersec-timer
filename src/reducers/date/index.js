@@ -1,8 +1,8 @@
 import { MINUS_FIFTEEN, GENERATE_DATE, STOP_TIMER } from "./actions";
 
 const startingTime = 5; // in hours
-const conversion = 60 * 60 * 1000; // hours to miliseconds
-const initialState = "";
+const conversion = 60 * 60 * 1000; // hours to miliseconds = 60 * 60 * 1000 = 3600
+const initialState = null;
 
 export default (state = initialState, action) => {
   switch (action.type) {
