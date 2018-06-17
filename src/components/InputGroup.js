@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 // Actions
 import { storePass } from "../reducers/store-pass/actions";
 import { updateInputs } from "../reducers/inputs/actions";
+import { minusFifteen } from "../reducers/date/actions";
+import { flashRed, changeGreen, changeDefault } from "../reducers/highlight-timer/actions";
 
 class InputGroup extends Component {
   constructor(props) {
@@ -19,6 +21,16 @@ class InputGroup extends Component {
     passId: PropTypes.number.isRequired
   };
 
+  componentDidUpdate() {
+    this.handleAllCorrect();
+  }
+
+  handleAllCorrect = () => {
+    if (!this.props.inputsArray.includes(false)) {
+      this.props.changeGreen();
+    }
+  };
+
   handleChange = event => {
     this.setState({ value: event.target.value });
   };
@@ -26,34 +38,38 @@ class InputGroup extends Component {
   handleSubmit = event => {
     event.preventDefault();
     if (this.props.passwords.includes(this.state.value)) {
-      // console.log("Valid pass");
+      // Valid pass
       if (!this.props.storedPasses.includes(this.state.value)) {
-        // console.log("Never been used");
+        // Never been used
         this.props.updateInputs(this.props.passId);
         this.props.storePass(this.state.value);
         this.setState({
           passCorrect: true
         });
+        this.props.changeDefault();
       } else {
-        // console.log("Already been used, not valid");
+        // Already been used, not valid
         this.setState({
           passCorrect: false,
           value: ""
         });
+        this.props.minusFifteen();
+        this.props.flashRed();
       }
     } else {
-      // console.log("Not valid pass");
+      // Not valid pass
       this.setState({
         passCorrect: false,
         value: ""
       });
+      this.props.minusFifteen();
+      this.props.flashRed();
     }
   };
 
   render() {
     const { inputsArray, passId } = this.props;
     const prevInput = inputsArray[passId - 1];
-    // console.log(passId, prevInput);
 
     return (
       <div className="input-group col">
@@ -90,7 +106,11 @@ const mapStateToProps = ({ passwords, storedPasses, inputsArray }) => ({
 
 const mapDispatchToProps = dispatch => ({
   storePass: providedPass => dispatch(storePass(providedPass)),
-  updateInputs: passId => dispatch(updateInputs(passId))
+  updateInputs: passId => dispatch(updateInputs(passId)),
+  minusFifteen: () => dispatch(minusFifteen()),
+  flashRed: () => dispatch(flashRed()),
+  changeDefault: () => dispatch(changeDefault()),
+  changeGreen: () => dispatch(changeGreen())
 });
 
 export default connect(

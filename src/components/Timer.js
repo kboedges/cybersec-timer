@@ -14,7 +14,12 @@ class Timer extends Component {
     return (
       <div>
         {`${props.hours}:${props.minutes}:${props.seconds}`.split("").map((char, index) => (
-          <span key={index} className={`time-char ${props.total === 0 ? "time-red" : "time-normal"} px-2 py-3 mx-1`}>
+          <span
+            key={index}
+            className={`time-char ${
+              props.total === 0 || this.props.timerColor === "red" ? "time-red" : "time-normal"
+            } px-2 py-3 mx-1`}
+          >
             {char}
           </span>
         ))}
@@ -41,8 +46,9 @@ class Timer extends Component {
   }
 }
 
-const mapStateToProps = ({ date }) => ({
-  date
+const mapStateToProps = ({ date, timerColor }) => ({
+  date,
+  timerColor
 });
 
 const mapDispatchToProps = dispatch => ({

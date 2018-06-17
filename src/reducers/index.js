@@ -7,6 +7,7 @@ import passwords from "./passwords";
 import storedPasses from "./store-pass";
 import inputsArray from "./inputs";
 import date from "./date";
+import timerColor from "./highlight-timer";
 
 export default combineReducers({
   timerStarted,
@@ -14,5 +15,6 @@ export default combineReducers({
   passwords,
   storedPasses,
   inputsArray,
-  date
+  date,
+  timerColor
 });

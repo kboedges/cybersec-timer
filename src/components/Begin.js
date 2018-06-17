@@ -34,10 +34,7 @@ class Begin extends Component {
             type="text"
             placeholder="Team Name"
           />
-          <button
-            className="m-3 btn btn-lg btn-cornflower px-5"
-            onClick={this.handleStart}
-          >
+          <button className="m-3 btn btn-lg btn-cornflower px-5" onClick={this.handleStart}>
             {timerStarted ? "Continue" : "Start"}
           </button>
         </form>
