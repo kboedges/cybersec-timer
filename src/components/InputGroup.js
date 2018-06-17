@@ -8,6 +8,9 @@ import { updateInputs } from "../reducers/inputs/actions";
 import { minusFifteen, stopTimer } from "../reducers/date/actions";
 import { flashRed, changeGreen, changeDefault } from "../reducers/highlight-timer/actions";
 
+// Utils
+import * as API from "../utils/API";
+
 class InputGroup extends Component {
   constructor(props) {
     super(props);
@@ -38,6 +41,20 @@ class InputGroup extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
+    // Validate password on the back end
+    API.validate(this.state.value)
+      .then((isValid) => {
+        
+        // Let's be sure
+        console.log(isValid);
+        
+        if (isValid) {
+          // Password is valid. Go!  
+        }
+
+      })
+
     if (this.props.passwords.includes(this.state.value)) {
       // Valid pass
       if (!this.props.storedPasses.includes(this.state.value)) {
