@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 // Actions
 import { storePass } from "../reducers/store-pass/actions";
+import { updateInputs } from "../reducers/inputs/actions";
 
 class InputGroup extends Component {
   constructor(props) {
@@ -15,7 +16,6 @@ class InputGroup extends Component {
   }
 
   static propTypes = {
-    fieldDisabled: PropTypes.bool.isRequired,
     passId: PropTypes.number.isRequired
   };
 
@@ -28,20 +28,21 @@ class InputGroup extends Component {
     if (this.props.passwords.includes(this.state.value)) {
       console.log("Valid pass");
       if (!this.props.storedPasses.includes(this.state.value)) {
-        console.log("Never been used");
+        // console.log("Never been used");
+        this.props.updateInputs(this.props.passId);
         this.props.storePass(this.state.value);
         this.setState({
           passCorrect: true
         });
       } else {
-        console.log("Already been used, not valid");
+        // console.log("Already been used, not valid");
         this.setState({
           passCorrect: false,
           value: ""
         });
       }
     } else {
-      console.log("Not valid pass");
+      // console.log("Not valid pass");
       this.setState({
         passCorrect: false,
         value: ""
@@ -50,31 +51,27 @@ class InputGroup extends Component {
   };
 
   render() {
-    const { fieldDisabled } = this.props;
+    const { inputsArray, passId } = this.props;
+    const prevInput = inputsArray[passId - 1];
+    console.log(passId, prevInput);
 
     return (
       <div className="input-group col">
         <input
           type="password"
           className="form-control"
-          placeholder="Password 1"
-          disabled={this.state.passCorrect === true || fieldDisabled}
+          placeholder={`Password ${passId}`}
+          disabled={this.state.passCorrect === true || prevInput === false}
           value={this.state.value}
           onChange={this.handleChange}
         />
         <div className="input-group-append">
           <button
-            className={`btn btn-input ${
-              fieldDisabled ? "btn-secondary" : "btn-cornflower"
-            } ${
-              this.state.passCorrect === true
-                ? "btn-correct"
-                : this.state.passCorrect === false
-                  ? "btn-wrong"
-                  : ""
+            className={`btn btn-input ${prevInput === false ? "btn-secondary" : "btn-cornflower"} ${
+              this.state.passCorrect === true ? "btn-correct" : this.state.passCorrect === false ? "btn-wrong" : ""
             }`}
             type="button"
-            disabled={this.state.passCorrect === true || fieldDisabled}
+            disabled={this.state.passCorrect === true || prevInput === false}
             onClick={this.handleSubmit}
           >
             {this.state.passCorrect === true ? "✔" : "Go"}
@@ -85,13 +82,15 @@ class InputGroup extends Component {
   }
 }
 
-const mapStateToProps = ({ passwords, storedPasses }) => ({
+const mapStateToProps = ({ passwords, storedPasses, inputsArray }) => ({
   passwords,
-  storedPasses
+  storedPasses,
+  inputsArray
 });
 
 const mapDispatchToProps = dispatch => ({
-  storePass: providedPass => dispatch(storePass(providedPass))
+  storePass: providedPass => dispatch(storePass(providedPass)),
+  updateInputs: passId => dispatch(updateInputs(passId))
 });
 
 export default connect(
