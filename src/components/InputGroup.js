@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 // Actions
 import { storePass } from "../reducers/store-pass/actions";
 import { updateInputs } from "../reducers/inputs/actions";
-import { minusFifteen } from "../reducers/date/actions";
+import { minusFifteen, stopTimer } from "../reducers/date/actions";
 import { flashRed, changeGreen, changeDefault } from "../reducers/highlight-timer/actions";
 
 class InputGroup extends Component {
@@ -28,6 +28,7 @@ class InputGroup extends Component {
   handleAllCorrect = () => {
     if (!this.props.inputsArray.includes(false)) {
       this.props.changeGreen();
+      this.props.stopTimer();
     }
   };
 
@@ -110,7 +111,8 @@ const mapDispatchToProps = dispatch => ({
   minusFifteen: () => dispatch(minusFifteen()),
   flashRed: () => dispatch(flashRed()),
   changeDefault: () => dispatch(changeDefault()),
-  changeGreen: () => dispatch(changeGreen())
+  changeGreen: () => dispatch(changeGreen()),
+  stopTimer: () => dispatch(stopTimer())
 });
 
 export default connect(

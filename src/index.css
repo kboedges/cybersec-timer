@@ -74,20 +74,17 @@ body {
 
 .time-normal {
   background: rgb(101, 101, 101);
-  background: linear-gradient(
-    180deg,
-    rgba(101, 101, 101, 1) 0%,
-    rgba(53, 53, 53, 1) 100%
-  );
+  background: linear-gradient(180deg, rgba(101, 101, 101, 1) 0%, rgba(53, 53, 53, 1) 100%);
 }
 
 .time-red {
   background: rgb(196, 15, 15);
-  background: linear-gradient(
-    180deg,
-    rgb(196, 15, 15) 0%,
-    rgb(105, 10, 10) 100%
-  );
+  background: linear-gradient(180deg, rgb(196, 15, 15) 0%, rgb(105, 10, 10) 100%);
+}
+
+.time-green {
+  background: rgb(75, 201, 75);
+  background: linear-gradient(180deg, rgb(75, 201, 75) 0%, rgb(44, 155, 44) 100%);
 }
 
 .time-stamps span {

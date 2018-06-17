@@ -18,7 +18,7 @@ class Timer extends Component {
             key={index}
             className={`time-char ${
               props.total === 0 || this.props.timerColor === "red" ? "time-red" : "time-normal"
-            } px-2 py-3 mx-1`}
+            } ${this.props.timerColor === "green" ? "time-green" : ""} px-2 py-3 mx-1`}
           >
             {char}
           </span>
