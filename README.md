@@ -27,5 +27,5 @@ If the timer reaches zero with some correct passwords entered
 If all 6 correct passwords are entered
 ![If all 6 correct passwords are entered](/screenshots/05-all-correct.png)
 
-If the countdown reaches 0
+If the countdown reaches zero
 ![If the countdown reaches 0](/screenshots/06-time-up.png)

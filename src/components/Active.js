@@ -6,6 +6,12 @@ import Passwords from "./Passwords";
 import Timer from "./Timer";
 
 class Active extends Component {
+  componentDidMount() {
+    if (!localStorage.getItem("timerStarted")) {
+      localStorage.setItem("timerStarted", this.props.timerStarted);
+    }
+  }
+
   render() {
     const { teamName } = this.props;
 
@@ -21,8 +27,9 @@ class Active extends Component {
   }
 }
 
-const mapStateToProps = ({ teamName }) => ({
-  teamName
+const mapStateToProps = ({ teamName, timerStarted }) => ({
+  teamName,
+  timerStarted
 });
 
 export default connect(mapStateToProps)(Active);
