@@ -15,14 +15,14 @@ npm start
 Enter a team name at the start
 ![Enter a team name at the start](/screenshots/01-begin.png)
 
-If an entered password is correct, a checkmark appears and the next password field become available
-![If an entered password is correct, a checkmark appears and the next password field become available](/screenshots/02-correct-pass.png)
+If an entered password is correct, a checkmark appears and the next password field becomes available
+![If an entered password is correct, a checkmark appears and the next password field becomes available](/screenshots/02-correct-pass.png)
 
 If an entered password is incorrect, or if the password is correct but already used, 15 minutes will be deducted from the timer
 ![If an entered password is incorrect, or if the password is correct but already used, 15 minutes will be deducted from the timer](/screenshots/03-incorrect-pass.png)
 
-Multiple correct passwords being entered
-![Multiple correct passwords being entered](/screenshots/04-multiple-correct.png)
+If the timer reaches zero with some correct passwords entered
+![If the timer reaches zero with some correct passwords entered](/screenshots/04-multiple-correct.png)
 
 If all 6 correct passwords are entered
 ![If all 6 correct passwords are entered](/screenshots/05-all-correct.png)
