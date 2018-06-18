@@ -12,4 +12,4 @@ npm start
 
 ## Screenshots
 
-[Enter a team name at the start](/screenshots/01-begin.png)
+![Enter a team name at the start](/screenshots/01-begin.png)
