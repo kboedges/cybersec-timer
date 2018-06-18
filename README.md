@@ -28,4 +28,4 @@ If all 6 correct passwords are entered
 ![If all 6 correct passwords are entered](/screenshots/05-all-correct.png)
 
 If the countdown reaches 0
-[If the countdown reaches 0](/screenshots/06-time-up.png)
+![If the countdown reaches 0](/screenshots/06-time-up.png)
