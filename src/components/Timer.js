@@ -5,11 +5,17 @@ import { connect } from "react-redux";
 // Actions
 import { generateDate } from "../reducers/date/actions";
 import { disableAllInputs } from "../reducers/disable-inputs/actions";
+import { changeRed } from "../reducers/highlight-timer/actions";
 
 class Timer extends Component {
   componentDidMount() {
     this.props.generateDate();
   }
+
+  handleTimerFinish = () => {
+    this.props.disableAllInputs();
+    this.props.changeRed();
+  };
 
   renderer = props => {
     return (
@@ -35,15 +41,15 @@ class Timer extends Component {
       <div className="timer pb-3">
         <p className="text-center pb-3">
           {timerColor === "green" ? (
-            <span className="saved-title">Your data has been saved.</span>
-          ) : inputsDisabled === true ? (
-            <span className="deleted-title">Your data has been deleted.</span>
+            <span className="saved-title">Your data has been saved</span>
+          ) : timerColor === "red" && inputsDisabled === true ? (
+            <span className="deleted-title">Your data has been deleted</span>
           ) : (
             "Your data will be deleted in:"
           )}
         </p>
         <h1 className="timer-head text-center mb-2">
-          <Countdown date={date} renderer={this.renderer} onComplete={this.props.disableAllInputs} />
+          <Countdown date={date} renderer={this.renderer} onComplete={this.handleTimerFinish} />
         </h1>
         <div className="d-flex flex-row justify-content-around time-stamps text-small mb-5 px-2">
           <span className="hours">HOURS</span>
@@ -63,7 +69,8 @@ const mapStateToProps = ({ date, timerColor, inputsDisabled }) => ({
 
 const mapDispatchToProps = dispatch => ({
   generateDate: () => dispatch(generateDate()),
-  disableAllInputs: () => dispatch(disableAllInputs())
+  disableAllInputs: () => dispatch(disableAllInputs()),
+  changeRed: () => dispatch(changeRed())
 });
 
 export default connect(

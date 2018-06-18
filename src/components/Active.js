@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import Passwords from "./Passwords";
 import Timer from "./Timer";
 
-// Actions
 class Active extends Component {
   render() {
     const { teamName } = this.props;
@@ -22,9 +21,8 @@ class Active extends Component {
   }
 }
 
-const mapStateToProps = ({ teamName, passwords }) => ({
-  teamName,
-  passwords
+const mapStateToProps = ({ teamName }) => ({
+  teamName
 });
 
 export default connect(mapStateToProps)(Active);

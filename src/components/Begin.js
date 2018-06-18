@@ -25,7 +25,7 @@ class Begin extends Component {
 
     return (
       <div className="begin">
-        <form className="box py-4 px-5 d-flex d-flex flex-column justify-content-center align-items-center">
+        <div className="box py-4 px-5 d-flex d-flex flex-column justify-content-center align-items-center">
           <h1 className="text-center m-3">Begin your challenge.</h1>
           <input
             className="form-control w-50 m-3"
@@ -37,7 +37,7 @@ class Begin extends Component {
           <button className="m-3 btn btn-lg btn-cornflower px-5" onClick={this.handleStart}>
             {timerStarted ? "Continue" : "Start"}
           </button>
-        </form>
+        </div>
       </div>
     );
   }

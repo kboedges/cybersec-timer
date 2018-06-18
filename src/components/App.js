@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+
+// Components
 import Begin from "./Begin";
 import Active from "./Active";
 

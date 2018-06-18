@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 import { storePass } from "../reducers/store-pass/actions";
 import { updateInputs } from "../reducers/inputs/actions";
 import { minusFifteen, stopTimer } from "../reducers/date/actions";
-import { flashRed, changeGreen, changeDefault } from "../reducers/highlight-timer/actions";
+import { changeRed, changeGreen, changeDefault } from "../reducers/highlight-timer/actions";
 
 // Utils
 import * as API from "../utils/API";
@@ -43,50 +43,40 @@ class InputGroup extends Component {
     event.preventDefault();
 
     // Validate password on the back end
-    API.validate(this.state.value)
-      .then((isValid) => {
-        
-        // Let's be sure
-        console.log(isValid);
-        
-        if (isValid) {
-          // Password is valid. Go!  
+    API.validate(this.state.value).then(isValid => {
+      if (isValid) {
+        // Valid pass
+        if (!this.props.storedPasses.includes(this.state.value)) {
+          // Never been used
+          this.props.updateInputs(this.props.passId);
+          this.props.storePass(this.state.value);
+          this.props.changeDefault();
+          this.setState({
+            passCorrect: true
+          });
+        } else {
+          // Already been used, not valid
+          this.props.minusFifteen();
+          this.props.changeRed();
+          this.setState({
+            passCorrect: false,
+            value: ""
+          });
         }
-
-      })
-
-    if (this.props.passwords.includes(this.state.value)) {
-      // Valid pass
-      if (!this.props.storedPasses.includes(this.state.value)) {
-        // Never been used
-        this.props.updateInputs(this.props.passId);
-        this.props.storePass(this.state.value);
-        this.setState({
-          passCorrect: true
-        });
-        this.props.changeDefault();
       } else {
-        // Already been used, not valid
+        // Not valid pass
+        this.props.minusFifteen();
+        this.props.changeRed();
         this.setState({
           passCorrect: false,
           value: ""
         });
-        this.props.minusFifteen();
-        this.props.flashRed();
       }
-    } else {
-      // Not valid pass
-      this.setState({
-        passCorrect: false,
-        value: ""
-      });
-      this.props.minusFifteen();
-      this.props.flashRed();
-    }
+    });
   };
 
   render() {
-    const { inputsArray, passId, inputsDisabled } = this.props;
+    const { inputsArray, passId, inputsDisabled, timerColor } = this.props;
     const prevInput = inputsArray[passId - 1];
 
     return (
@@ -102,13 +92,15 @@ class InputGroup extends Component {
         <div className="input-group-append">
           <button
             className={`btn btn-input 
-            ${prevInput === false || inputsDisabled === true ? "btn-secondary" : "btn-cornflower"} 
-            ${this.state.passCorrect === true ? "btn-correct" : this.state.passCorrect === false ? "btn-wrong" : ""}`}
+            ${prevInput === false ? "btn-secondary" : "btn-cornflower"} 
+            ${this.state.passCorrect === true ? "btn-correct" : this.state.passCorrect === false ? "btn-wrong" : ""}
+            ${timerColor === "red" && inputsDisabled === true ? "btn-timer-out" : ""}
+            `}
             type="button"
             disabled={this.state.passCorrect === true || prevInput === false || inputsDisabled === true}
             onClick={this.handleSubmit}
           >
-            {this.state.passCorrect === true ? "✔" : "Go"}
+            {this.state.passCorrect === true ? "✔" : timerColor === "red" && inputsDisabled === true ? "✕" : "Go"}
           </button>
         </div>
       </div>
@@ -116,18 +108,18 @@ class InputGroup extends Component {
   }
 }
 
-const mapStateToProps = ({ passwords, storedPasses, inputsArray, inputsDisabled }) => ({
-  passwords,
+const mapStateToProps = ({ storedPasses, inputsArray, inputsDisabled, timerColor }) => ({
   storedPasses,
   inputsArray,
-  inputsDisabled
+  inputsDisabled,
+  timerColor
 });
 
 const mapDispatchToProps = dispatch => ({
   storePass: providedPass => dispatch(storePass(providedPass)),
   updateInputs: passId => dispatch(updateInputs(passId)),
   minusFifteen: () => dispatch(minusFifteen()),
-  flashRed: () => dispatch(flashRed()),
+  changeRed: () => dispatch(changeRed()),
   changeDefault: () => dispatch(changeDefault()),
   changeGreen: () => dispatch(changeGreen()),
   stopTimer: () => dispatch(stopTimer())
