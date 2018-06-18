@@ -32,6 +32,7 @@ class InputGroup extends Component {
     if (!this.props.inputsArray.includes(false)) {
       this.props.changeGreen();
       this.props.stopTimer();
+      // localStorage.setItem("startTime", Date.now());
     }
   };
 
@@ -57,6 +58,7 @@ class InputGroup extends Component {
         } else {
           // Already been used, not valid
           this.props.minusFifteen();
+          // localStorage.setItem("startTime", this.props.date - 15 * 60 * 1000);
           this.props.changeRed();
           this.setState({
             passCorrect: false,
@@ -66,6 +68,7 @@ class InputGroup extends Component {
       } else {
         // Not valid pass
         this.props.minusFifteen();
+        // localStorage.setItem("startTime", this.props.date - 15 * 60 * 1000);
         this.props.changeRed();
         this.setState({
           passCorrect: false,
@@ -108,11 +111,12 @@ class InputGroup extends Component {
   }
 }
 
-const mapStateToProps = ({ storedPasses, inputsArray, inputsDisabled, timerColor }) => ({
+const mapStateToProps = ({ storedPasses, inputsArray, inputsDisabled, timerColor, date }) => ({
   storedPasses,
   inputsArray,
   inputsDisabled,
-  timerColor
+  timerColor,
+  date
 });
 
 const mapDispatchToProps = dispatch => ({
