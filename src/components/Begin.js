@@ -21,7 +21,7 @@ class Begin extends Component {
   };
 
   render() {
-    const { timerStarted } = this.props;
+    // const { timerStarted } = this.props;
 
     return (
       <div className="begin">
