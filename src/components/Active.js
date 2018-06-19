@@ -6,11 +6,11 @@ import Passwords from "./Passwords";
 import Timer from "./Timer";
 
 class Active extends Component {
-  componentDidMount() {
-    if (!localStorage.getItem("timerStarted")) {
-      localStorage.setItem("timerStarted", this.props.timerStarted);
-    }
-  }
+  // componentDidMount() {
+  //   if (!localStorage.getItem("timerStarted")) {
+  //     localStorage.setItem("timerStarted", this.props.timerStarted);
+  //   }
+  // }
 
   render() {
     const { teamName } = this.props;
