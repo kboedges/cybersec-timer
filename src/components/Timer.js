@@ -10,9 +10,9 @@ import { changeRed } from "../reducers/highlight-timer/actions";
 class Timer extends Component {
   componentDidMount() {
     this.props.generateDate();
-    if (!localStorage.getItem("startTime")) {
-      localStorage.setItem("startTime", this.props.date);
-    }
+    // if (!localStorage.getItem("startTime")) {
+    //   localStorage.setItem("startTime", this.props.date);
+    // }
   }
 
   handleTimerFinish = () => {

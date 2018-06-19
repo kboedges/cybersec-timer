@@ -7,10 +7,11 @@ const initialState = Date.now();
 export default (state = initialState, action) => {
   switch (action.type) {
     case GENERATE_DATE:
-      return (
-        (localStorage.getItem("startTime") ? parseInt(localStorage.getItem("startTime"), 10) : Date.now()) +
-        startingTime * conversion
-      );
+      return Date.now();
+    // return (
+    //   (localStorage.getItem("startTime") ? parseInt(localStorage.getItem("startTime"), 10) : Date.now()) +
+    //   startingTime * conversion
+    // );
     case MINUS_FIFTEEN:
       return state - 15 * 60 * 1000;
     case STOP_TIMER:
