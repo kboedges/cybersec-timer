@@ -33,3 +33,12 @@ class Passwords extends Component {
 }
 
 export default Passwords;
+
+// const passwords = [
+//   "a@#ba5ba9",
+//   "qsKF8Ye7",
+//   "YD{6dJd[",
+//   "s!Mq<}84",
+//   "VLYQs99V",
+//   "L]F9Wakv"
+// ]
