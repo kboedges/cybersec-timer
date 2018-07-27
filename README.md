@@ -1,5 +1,9 @@
 # Cyber Security Timer
 
+Stop a ransomware attach by entering 6 correct passwords within 5 hours; beware the 15-minute penalty for entering a wrong password!
+
+## Instructions
+
 Enter 6 correct passwords, one-by-one, to stop your data from being deleted. You'll have 5 hours to complete the task. If you enter an incorrect password or enter a correct password more than once, you'll have 15 minutes deducted from your time. If you enter all 6 correct passwords, the timer will stop.
 
 ## Setup
