@@ -1,6 +1,6 @@
 # Cyber Security Timer
 
-Stop a ransomware attach by entering 6 correct passwords within 5 hours; beware the 15-minute penalty for entering a wrong password!
+Stop a ransomware attack by entering 6 correct passwords within 5 hours; beware the 15-minute penalty for entering a wrong password!
 
 ## Instructions
 
